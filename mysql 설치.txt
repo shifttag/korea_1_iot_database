@@ -1,0 +1,57 @@
+== 프로그램 추가 제거 ==
+> mysql 제거
+C:\ProgramData\mysql 삭제
+C:\Users\ehdgu\AppData\Roaming\mysql 삭제
+C:\Program Files\mysql 삭제
+
+
+설치 (window)
+https://dev.mysql.com/downloads/installer/
+후에 303.6M가 짜리 다운
+
+후 실행 -> custom -> mysql servers -> mysql servers -> mysql servers 담기
+applications -> mysql workbench -> mysql workbench -> mysql workbench 담기
+documentation -> samples and examples -> samples and examples -> samples and examples 담기
+MySQL Root Password 등록
+나머지는 그대로 진행
+Connect To Server에 password 입력후 체크 후 next 진행하다 finish까지
+
+
+설치 (mac)
+https://dev.mysql.com/downloads/mysql/
+select Operating System -> macos -> 주로 ARM 설치
+터미널창에서 uname -p -> ARM이라 뜨면 ARM, x86이면 x86설치
+https://dev.mysql.com/downloads/workbench/ 들어가서 버전에 맞게 다운로드
+
+Server 완료된 파일 실행 결정 확인창 허용 -> 설치 or next 후 하다가 비밀번호 뜨면 비밀번호 입력
+workbench 클릭 -> 왼쪽 workbench를 오른쪽 application 끌어 넣어주기
+
+
+실행 후(window)
+Local instance Mysql80
+우클릭 -> edit connection -> password -> stor in vault... -> Successfully 뜨는지 확인
+안뜨면 환경변수 설정 -> 시스템 변수 -> Path ->새로만들기 ->  C:\Program Files\MySQL\MySQL Server 8.0\bin 추가 후 위로이동 하여 최상단으로 보내고 확인 
+
+cmd 창에서 mysql -V로 제대로 설치 되었는지 확인
+
+실행 후 (mac)
+Spotlight 검색 사용 또는 응용프로그램 > 유틸리티 터미널 실행
+터미널에서 본인 로그인 비밀번호 입력
+
+bash: nano ~/.bash_profile 파일 실행
+Zsh: nano ~/.zshrc 파일 실행
+
+열린 파일 환경에
+:export PATH=/usr/local/mysql/bin:$PATH
+
+Control + O (저장)
+Enter 눌러서 파일명 확인
+Control + X (편집기 종료)
+
+파일 저장 후 변경사항 적용
+source ~/.bash_profile
+source ~/.zshrc
+
+추가된 환경 변수 확인
+mysql -V
+echo $PATH
