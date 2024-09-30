@@ -85,7 +85,7 @@ values(130, 250);
     a) text 형식: 1 ~ 약 65000byte
 		longtext 형식: 1 ~ 42억byte
     
-    b) blob (binary long object): 이미지, 동영상 등의 데이터
+    c) blob (binary long object): 이미지, 동영상 등의 데이터
 		blob 형식: 1 ~ 약 65000byte
         longblob 형식: 1 ~ 42억byte
 
